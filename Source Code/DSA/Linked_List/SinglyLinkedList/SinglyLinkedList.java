@@ -117,7 +117,7 @@ public class SinglyLinkedList {
     }
 
     /*
-     * Method 3 - printList() - Prints The Entire Linked List. Returns void
+     * Method 5 - printList() - Prints The Entire Linked List. Returns void
      */
 
     public void printList() {
@@ -132,6 +132,124 @@ public class SinglyLinkedList {
             }
             System.out.print("NULL \n");
         }
+    }
+
+    /*
+     * Method 6 - getListSize() - Returns the current Linked List Size
+     */
+
+    public int getListSize() {
+        return sizeofLL;
+
+    }
+
+    /*
+     * Method 7 - deleteNodeFromFirst() Deletion Of Node From The Beginnning of the
+     * Linked List. Returns void
+     */
+
+    public void deleteNodeFromFirst() {
+
+        // Case 1- If Linked List is Empty!
+
+        if (head == null) {
+            System.out.println("Nothing To Delete!");
+
+            // Case 2- If Only one element is present
+        } else if (head.next == null) {
+            head = null;
+            tail = null;
+            System.out.println("Last Node Deleted. Nothing To Delete From First!");
+            sizeofLL--;
+        } else {
+
+            head = head.next;
+            System.out.println("Node Deleted From First!");
+            sizeofLL--;
+
+        }
+
+    }
+
+    /*
+     * Method 8 - deleteNodeFromLast() Deletion Of Node From The End of the
+     * Linked List. Returns void
+     */
+
+    public void deleteNodeFromLast() {
+
+        // Case 1- If Linked List is Empty!
+
+        if (head == null) {
+            System.out.println("Nothing To Delete!");
+
+            // Case 2- If Only one element is present
+        } else if (head.next == null) {
+            head = null;
+            tail = null;
+            System.out.println("Last Node Deleted. Nothing To Delete From Last!");
+            sizeofLL--;
+        } else {
+
+            Node tempNode = head;
+
+            for (int i = 1; i < sizeofLL; i++) {
+                tempNode = tempNode.next;
+            }
+
+            tempNode.next = null;
+            tail = tempNode;
+            sizeofLL--;
+            System.out.println("Node Deleted From Last");
+
+        }
+
+    }
+
+    /*
+     * Method 9 - deleteNode() Deletion Of Node From Given Position. Returns void
+     */
+
+    public void deleteNode(int position) {
+
+        // Case 1- If Linked List is Empty!
+
+        if (head == null) {
+            System.out.println("Nothing To Delete!");
+
+            // Case 2- If Only one element is present
+        } else if (head.next == null) {
+            head = null;
+            tail = null;
+            System.out.println("Last Node Deleted. Nothing To Delete!");
+            sizeofLL--;
+        }
+
+        else if (position == 1) {
+            deleteNodeFromFirst();
+            return;
+        } else if (position >= sizeofLL) {
+            deleteNodeFromLast();
+            return;
+        } else {
+
+            Node tempNode = head;
+
+            for (int i = 1; i < position - 1; i++) {
+                tempNode = tempNode.next;
+
+            }
+
+            Node toBeDeleted = tempNode.next;
+            Node nextNode = toBeDeleted.next;
+
+            tempNode.next = nextNode;
+            toBeDeleted.next = null;
+            System.out.println("Node Deleted From Position " + position);
+            sizeofLL--;
+
+        }
+
     }
 
 }

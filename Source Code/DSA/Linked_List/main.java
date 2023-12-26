@@ -79,6 +79,50 @@ public class main {
         sll4.insertNode("Raninagar Jalpaiguri", 2);
         sll4.printList();
 
+        /*
+         * Test 9 - Deleting A Node From First using deleteFromFirst()
+         */
+
+        sll3.deleteNodeFromFirst();
+        sll3.printList();
+
+        sll3.deleteNodeFromFirst();
+        sll3.printList();
+
+        sll3.deleteNodeFromFirst();
+        sll3.printList();
+
+        /*
+         * Test 10 - Deleting A Node From Last using deleteFromLast()
+         *
+         */
+
+        sll1.deleteNodeFromFirst();
+        sll1.printList();
+
+        sll1.deleteNodeFromFirst();
+        sll1.printList();
+
+        sll1.deleteNodeFromFirst();
+        sll1.printList();
+
+        sll1.deleteNodeFromFirst();
+        sll1.printList();
+
+        sll1.deleteNodeFromFirst();
+        sll1.printList();
+
+        /*
+         * Test 11 - Deleting A Node From Given Position using deleteNode()
+         *
+         */
+        sll2.printList();
+        sll2.deleteNode(3);
+        sll2.printList();
+
+        sll2.deleteNode(2);
+        sll2.printList();
+
     }
 
 }
