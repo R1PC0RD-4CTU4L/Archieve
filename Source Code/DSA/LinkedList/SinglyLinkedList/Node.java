@@ -1,6 +1,6 @@
-
 public class Node {
 
-    String value;
+    int value;
     Node next;
+
 }
